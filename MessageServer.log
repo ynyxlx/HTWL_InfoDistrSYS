@@ -1,4 +1,1 @@
-Thu, 10 Jan 2019 22:06:08 MessageServer.py[line:68] INFO start
-Thu, 10 Jan 2019 22:06:08 _internal.py[line:88] WARNING  * Debugger is active!
-Thu, 10 Jan 2019 22:06:09 _internal.py[line:88] INFO  * Debugger PIN: 241-327-123
-Thu, 10 Jan 2019 22:06:09 _internal.py[line:88] INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+Thu, 10 Jan 2019 22:08:54 MessageServer.py[line:68] INFO start

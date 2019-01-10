@@ -20,7 +20,7 @@ class Email():
 
 
 
-    def send(self,receiver,subject,html,file_name,sender=''):
+    def send(self,receiver,subject,html,sender=''):
         if not sender:
             sender = self.username
             
@@ -38,14 +38,14 @@ class Email():
 
         mail_body = MIMEText(html, _subtype='html', _charset='utf-8')
         msgRoot.attach(mail_body)
-
+        '''
         #构造附件
         if file_name:    
             att = MIMEText(open(file_name, 'rb').read(), 'base64', 'utf-8')    
             att["Content-Type"] = 'application/octet-stream'    
             att["Content-Disposition"] = 'attachment; filename="'+ file_name+'"'    
             msgRoot.attach(att)    
-
+        '''
 
       
 
