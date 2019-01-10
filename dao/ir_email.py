@@ -8,17 +8,22 @@ from email.header import Header
 
 class Email():
     def __init__(self,smtpserver,username,password):
+        self.username = username
         try:
             self.smtp = smtplib.SMTP()
             self.smtp.connect(smtpserver)    
-            self.smtp.login(username, password)  
+            self.smtp.login(username, password)
+            
         except Exception as ex:
             print(ex)
 
 
 
 
-    def send(self,sender,receiver,subject,html,file_name,):
+    def send(self,receiver,subject,html,file_name,sender=''):
+        if not sender:
+            sender = self.username
+            
         msgRoot = MIMEMultipart('related') 
         msgRoot['From'] = sender
         if type(receiver)==type([]):

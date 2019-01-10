@@ -16,12 +16,14 @@ class SMS():
 		md5.update(text.encode())
 		return md5.hexdigest() [:9]+"-"+md5.hexdigest() [9:13]+"-"+md5.hexdigest() [13:17]+"-"+md5.hexdigest() [17:21]+"-"+md5.hexdigest() [21:]
 
-	def __init__(self):
-		logging.basicConfig(level=logging.DEBUG,
-                format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
-                datefmt='%a, %d %b %Y %H:%M:%S',
-                filename='sms.log',
-                filemode='w')	
+	def __init__(self, server_addr , user, passwd):
+		
+		
+		self.server_addr = server_addr
+		self.user = user
+		self.passwd =  passwd
+
+		
 
 		
 
@@ -29,7 +31,7 @@ class SMS():
 		
 
 
-	def send(self, content, tels):
+	def send(self, tels, content):
 		tels_list=[]
 		if type(tels)!=type([]):
 			tels_list.append(tels)
@@ -46,13 +48,13 @@ class SMS():
 			time.sleep(0.1)
 			headers={'content-type': 'text/xml','charset':"utf-8"}
 			data=self.create_SOAPXml(user,content)
-			r = requests.post("http://10.96.45.32:28888/Service/WebService.asmx",headers=headers, data=data)
+			r = requests.post(self.server_addr,headers=headers, data=data)
 			logging.info(str(r)+":"+user)
 		return True
 			
 
 
-	def create_SOAPXml(self,mobile, content,user_name,passwd):
+	def create_SOAPXml(self,mobile, content):
 		uuid =self.get_uuid(str(time.time()))
 		print (uuid)
 		return  '''<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.139130.net">
@@ -60,9 +62,9 @@ class SMS():
 						<soapenv:Body>
 							<net:Post>
 								<!--Optional:-->
-								<net:account>'''+user_name+'''</net:account>
+								<net:account>'''+self.user+'''</net:account>
 								<!--Optional:-->
-								<net:password>'''+passwd+'''</net:password>
+								<net:password>'''+self.passwd+'''</net:password>
 								<!--Optional:-->
 								<net:mtpack>
 									<net:uuid>''' + uuid + '''</net:uuid>
@@ -119,6 +121,12 @@ class SMS():
 
 
 if __name__=='__main__':
-        sms=SMS()
-        sms.send("测试：!!!一二三123abc",[123456789,987654321])
+
+	logging.basicConfig(level=logging.DEBUG,
+                format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                datefmt='%a, %d %b %Y %H:%M:%S',
+                filename='sms.log',
+                filemode='w')
+	sms=SMS()
+	sms.send("测试：!!!一二三123abc",[123456789,987654321])
         

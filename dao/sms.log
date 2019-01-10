@@ -1,0 +1,3 @@
+Thu, 10 Jan 2019 16:35:19 connectionpool.py[line:205] DEBUG Starting new HTTP connection (1): 10.96.45.32:28888
+Thu, 10 Jan 2019 16:35:19 connectionpool.py[line:393] DEBUG http://10.96.45.32:28888 "POST /Service/WebService.asmx HTTP/1.1" 200 None
+Thu, 10 Jan 2019 16:35:19 sms.py[line:56] INFO <Response [200]>:15987738298

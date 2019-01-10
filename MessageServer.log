@@ -1,0 +1,5 @@
+Thu, 10 Jan 2019 17:46:31 MessageServer.py[line:51] INFO start
+Thu, 10 Jan 2019 17:46:33 _internal.py[line:88] WARNING  * Debugger is active!
+Thu, 10 Jan 2019 17:46:33 _internal.py[line:88] INFO  * Debugger PIN: 678-587-607
+Thu, 10 Jan 2019 17:46:33 _internal.py[line:88] INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+Thu, 10 Jan 2019 17:46:55 _internal.py[line:88] INFO  * Detected change in 'c:\\Users\\lx198\\OneDrive\\Îï×Ê²Ö´¢¿Æ\\script\\infomation_publish\\dao\\sms.py', reloading
