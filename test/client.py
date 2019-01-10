@@ -37,6 +37,10 @@ INFORMATION_DICT2={
 import json
 data_json=json.dumps(INFORMATION_DICT2)
 
-t7=post('http://127.0.0.1:5000/message',data=data_json)
-print(t7)
+#t7=post('http://127.0.0.1:5000/message',data=data_json)
+#print(t7)
 #print(t7.text)
+
+t8=get('http://127.0.0.1:5000/message',data=data_json)
+print(t8)
+print(t8.text)

@@ -20,12 +20,16 @@ class MessageHandle():
             return 'ok!'
         except Exception as ex:
             return ex
+    
+    @classmethod
+    def get_modules(self):
+        return self.object_dict
 
 
 if __name__ == '__main__':
     from  config import MODUL_DICT
     MessageHandle(MODUL_DICT)
-
+    '''
     INFORMATION_DICT={
             "SMS":{
                 "tels":"15987738298",
@@ -40,3 +44,20 @@ if __name__ == '__main__':
         }
 
     MessageHandle.send(INFORMATION_DICT)
+    '''
+    import inspect
+    import json
+
+    message_template={}
+    mods_dict=MessageHandle.get_modules()
+
+    for cls_name in mods_dict:
+
+        message_template[cls_name]={}
+
+        for args in inspect.getfullargspec(mods_dict[cls_name].send)[0]:
+            if args =='self':
+                continue
+            message_template[cls_name][args]=''
+        
+    print( json.dumps(message_template))

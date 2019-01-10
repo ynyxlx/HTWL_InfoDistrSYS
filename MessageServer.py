@@ -29,6 +29,23 @@ class Message(Resource):
         
         
         return MessageHandle.send(message_dict)
+    
+    def get(self):
+        import inspect
+
+        message_template={}
+        mods_dict=MessageHandle.get_modules()
+
+        for cls_name in mods_dict:
+
+            message_template[cls_name]={}
+
+            for args in inspect.getfullargspec(mods_dict[cls_name].send)[0]:
+                if args =='self':
+                    continue
+                message_template[cls_name][args]=''
+        
+        return message_template
 
 
 '''
