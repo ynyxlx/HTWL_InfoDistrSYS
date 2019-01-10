@@ -32,6 +32,8 @@ class Message(Resource):
     
     def get(self):
         import inspect
+        logging.info("preparing message template")
+
 
         message_template={}
         mods_dict=MessageHandle.get_modules()
