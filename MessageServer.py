@@ -6,7 +6,7 @@ app = Flask(__name__)
 api = Api(app)
 
 from  config import MODUL_DICT
-from InformationMidware import MessageHandle
+from MidwareManager import MessageHandle
 
 
 import logging
