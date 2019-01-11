@@ -20,23 +20,23 @@ class Email():
 
 
 
-    def send(self,receiver,subject,html,sender=''):
+    def send(self,email_address,subject,contents,sender=''):
         if not sender:
             sender = self.username
             
         msgRoot = MIMEMultipart('related') 
         msgRoot['From'] = sender
-        if type(receiver)==type([]):
-            msgRoot['To'] = ",".join(receiver)
-        elif type(receiver)==type(""):
-             msgRoot['To'] = receiver
+        if type(email_address)==type([]):
+            msgRoot['To'] = ",".join(email_address)
+        elif type(email_address)==type(""):
+             msgRoot['To'] = email_address
             
        
         msgRoot['Subject'] = Header(subject,'GBK')    
 
         #构造正文
 
-        mail_body = MIMEText(html, _subtype='html', _charset='utf-8')
+        mail_body = MIMEText(contents, _subtype='html', _charset='utf-8')
         msgRoot.attach(mail_body)
         '''
         #构造附件
@@ -53,15 +53,15 @@ class Email():
             print ('To:'+msgRoot['To'])
            
               
-            self.smtp.sendmail(sender, receiver, msgRoot.as_string())    
+            self.smtp.sendmail(sender, email_address, msgRoot.as_string())    
 
         except Exception as ex:
             print("email fail!!!")
             print(ex)
-            ret=0
+            ret=False
         else:
             print("email success!!!!!!!!!")
-            ret=1
+            ret=True
         finally:
             self.smtp.quit()
           

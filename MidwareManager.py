@@ -17,9 +17,9 @@ class MessageHandle():
                 self.object_dict[message_channel].send(
                     **message_dict[message_channel]
                 )
-            return 'ok!'
+            return 'ok!',True
         except Exception as ex:
-            return ex
+            return ex,False
     
     @classmethod
     def get_modules(self):
