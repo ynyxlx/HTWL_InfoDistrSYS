@@ -1,4 +1,4 @@
-Fri, 11 Jan 2019 16:56:02 MessageServer.py[line:70] INFO start
-Fri, 11 Jan 2019 16:56:03 _internal.py[line:88] WARNING  * Debugger is active!
-Fri, 11 Jan 2019 16:56:03 _internal.py[line:88] INFO  * Debugger PIN: 678-587-607
-Fri, 11 Jan 2019 16:56:03 _internal.py[line:88] INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+Fri, 11 Jan 2019 17:03:41 MessageServer.py[line:70] INFO start
+Fri, 11 Jan 2019 17:03:43 _internal.py[line:88] WARNING  * Debugger is active!
+Fri, 11 Jan 2019 17:03:43 _internal.py[line:88] INFO  * Debugger PIN: 678-587-607
+Fri, 11 Jan 2019 17:03:43 _internal.py[line:88] INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)

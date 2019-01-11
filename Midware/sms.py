@@ -31,15 +31,15 @@ class SMS():
 		
 
 
-	def send(self, tels, content):
+	def send(self, telephone_numbers, contents):
 		tels_list=[]
-		if type(tels)!=type([]):
-			tels_list.append(tels)
+		if type(telephone_numbers)!=type([]):
+			tels_list.append(telephone_numbers)
 		else:
-			tels_list=tels
+			tels_list=telephone_numbers
             
 		
-		content=content.encode('utf-8').decode('latin-1')
+		contents=contents.encode('utf-8').decode('latin-1')
 
 		for tel in tels_list:
 			user=str(tel)
@@ -47,7 +47,7 @@ class SMS():
 			
 			time.sleep(0.1)
 			headers={'content-type': 'text/xml','charset':"utf-8"}
-			data=self.create_SOAPXml(user,content)
+			data=self.create_SOAPXml(user,contents)
 			r = requests.post(self.server_addr,headers=headers, data=data)
 			logging.info(str(r)+":"+user)
 		return True

@@ -26,9 +26,9 @@ class Message(Resource):
 
         message_dict=json.loads(get_data)
         
-        
-        
-        return MessageHandle.send(message_dict)
+        ret = MessageHandle.send(message_dict)
+        logging.info(ret)
+        return ret
     
     def get(self):
         import inspect

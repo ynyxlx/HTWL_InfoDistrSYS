@@ -24,14 +24,14 @@ INFORMATION_DICT={"MESSAGE":
             
 INFORMATION_DICT2={
             "SMS":{
-                "tels":"15987738298",
-                "content":"test4"
+                "telephone_numbers":"15987738298",
+                "contents":"test4"
             },
             "EMAIL":{
-                "receiver":"68545766@qq.com",
+                "email_address":"68545766@qq.com",
                 "subject":"test subject 4",
-                "html":"test main text 4",
-                "file_name":""
+                "contents":"test main text 4",
+                
             }
         }
 import json
