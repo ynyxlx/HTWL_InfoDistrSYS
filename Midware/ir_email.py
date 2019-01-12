@@ -6,7 +6,9 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage    
 from email.header import Header
 
-class Email():
+from MessageInterface import Message
+
+class Email(Message):
     def __init__(self,smtpserver,username,password):
         self.username = username
         try:
