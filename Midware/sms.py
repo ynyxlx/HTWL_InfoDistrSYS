@@ -6,7 +6,6 @@ import logging
 import requests
 
 
-
 class SMS():
 
 	

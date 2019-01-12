@@ -1,4 +1,9 @@
-Thu, 10 Jan 2019 22:11:15 MessageServer.py[line:70] INFO start
-Thu, 10 Jan 2019 22:11:15 _internal.py[line:88] WARNING  * Debugger is active!
-Thu, 10 Jan 2019 22:11:15 _internal.py[line:88] INFO  * Debugger PIN: 241-327-123
-Thu, 10 Jan 2019 22:11:15 _internal.py[line:88] INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+Sat, 12 Jan 2019 15:34:40 MessageServer.py[line:70] INFO start
+Sat, 12 Jan 2019 15:34:41 _internal.py[line:88] WARNING  * Debugger is active!Sat, 12 Jan 2019 15:37:07 _internal.py[line:88] INFO  * Restarting with stat
+7-607
+Sat, 12 Jan 2019 15:34:41 _internal.py[line:88] INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+Sat, 12 Jan 2019 15:34:48 MessageServer.py[line:35] INFO preparing message template
+Sat, 12 Jan 2019 15:34:48 _internal.py[line:88] INFO 127.0.0.1 - - [12/Jan/2019 15:34:48] "GET /message HTTP/1.1" 200 -
+Sat, 12 Jan 2019 15:35:18 MessageServer.py[line:35] INFO preparing message template
+Sat, 12 Jan 2019 15:35:18 _internal.py[line:88] INFO 127.0.0.1 - - [12/Jan/2019 15:35:18] "GET /message HTTP/1.1" 200 -
+Sat, 12 Jan 2019 15:37:07 _internal.py[line:88] INFO  * Detected change in 'C:\\Users\\lx198\\OneDrive\\Îï×Ê²Ö´¢¿Æ\\script\\infomation_publish\\Midware\\sms.py', reloading

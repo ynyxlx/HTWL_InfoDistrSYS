@@ -1,4 +1,6 @@
 import base64
+
+
 from io import BytesIO
 import smtplib    
 from email.mime.multipart import MIMEMultipart    
@@ -6,9 +8,10 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage    
 from email.header import Header
 
-from MessageInterface import Message
 
-class Email(Message):
+
+
+class Email():
     def __init__(self,smtpserver,username,password):
         self.username = username
         try:
