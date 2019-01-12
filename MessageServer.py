@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jan 10 17:07:27 2019
+
+@author: lx
+"""
+
 from flask  import Flask, request
 from flask_restful import reqparse, abort, Api, Resource
 import json
@@ -68,4 +75,6 @@ if __name__ == '__main__':
                 filemode='w')	
 
     logging.info('start')
-    app.run(debug=True)
+    app.run(debug=True,
+            port=5000,
+            host='0.0.0.0')

@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jan 10 17:07:27 2019
+
+@author: lx
+"""
+
 
 import time
 import hashlib
